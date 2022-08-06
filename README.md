@@ -7,3 +7,13 @@ File format
 User Name|balance
 
 using mocha as unit test
+
+how to run project:
+- npm install
+- npm run test (optional)
+- npm run start
+
+how to exit program
+ctrl + c or type "exit"
+
+dev by Zikri Akmal Santoso
