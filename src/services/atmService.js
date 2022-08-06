@@ -15,4 +15,17 @@ const deposit = async (user,amount) =>
     return user
 }
 
-module.exports = { login, deposit }
+const transfer = async(senderName,recepientName,amount)=>{
+    // deduct sender balance
+    const sender =  await updateUserBalance(senderName,amount * -1)
+    // add recipient balance
+    const recipient = await updateUserBalance(recepientName,amount)
+    return {
+        sender:sender,
+        recipient:recipient
+    }
+}
+
+
+
+module.exports = { login, deposit,transfer }
