@@ -1,9 +1,20 @@
+const {findByName, createUser} = require("./userService");
+
 const login = async (name) =>
 {
     //todo check logged in or not
-    const balance = 0;
-    console.log(`Hello, ${name}!\nYour balance is ${balance}`)
-    return true
+    let user = await findByName(name)
+    if(user === undefined) user = await createUser(name)
+    console.log(`Hello, ${user.name}!\nYour balance is ${user.balance}`)
+    return user
 }
 
-module.exports = { login }
+const deposit = async (user,amount) =>
+{
+    return {
+        "name": "Aliah",
+        "balance": 25000
+    }
+}
+
+module.exports = { login, deposit }

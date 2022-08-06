@@ -6,7 +6,9 @@ const rl = require('readline').createInterface({
 
 const app = async () => {
     let state = {
-        "isLogin": false, "name": null
+        "isLogin": false,
+        "name": null,
+        "balance":0
     }
     rl.prompt();
     rl.on('line', async (line) => {
@@ -17,15 +19,16 @@ const app = async () => {
         } else {
             switch (args[0]) {
                 case LOGIN:
-                    state.isLogin = await login(args[1]);
-                    state.name = args[1];
-                    break
+                    const user = await login(args[1]);
+                    state.isLogin = user !== undefined;
+                    state.name = user.name;
+                    state.balance =  user.balance;
+                    break;
                 case DEPOSIT:
                     if (!state.isLogin) {
                         console.log("Unauthorized, Please login!")
                         break;
                     }
-                    console.log("ini deposit")
                     break
                 case WITHDRAW:
                     if (!state.isLogin) {
