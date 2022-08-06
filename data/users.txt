@@ -1,4 +1,5 @@
 Alice|14000
-Aliah|22000
+Aliah|42000
 user hongkong|3000
 0.9xxeec8j017|0
+zikri|1000

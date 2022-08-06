@@ -4,7 +4,6 @@ const login = async (name) => {
     //todo check logged in or not
     let user = await findByName(name)
     if (user === undefined) user = await createUser(name)
-    console.log(`Hello, ${user.name}!\nYour balance is ${user.balance}`)
     return user
 }
 
@@ -38,4 +37,4 @@ const withdraw = async (user,amount) => {
 }
 
 
-module.exports = {login,logout, deposit, transfer,withdraw}
+module.exports = {login,logout, deposit, transfer, withdraw}
