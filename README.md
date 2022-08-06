@@ -17,3 +17,5 @@ how to exit program
 ctrl + c or type "exit"
 
 dev by Zikri Akmal Santoso
+
+noted : first test dont add balance on alice it will failing the test !
