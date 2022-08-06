@@ -1,4 +1,4 @@
-const {findByName, createUser} = require("./userService");
+const {findByName, createUser, updateUserBalance} = require("./userService");
 
 const login = async (name) =>
 {
@@ -11,10 +11,8 @@ const login = async (name) =>
 
 const deposit = async (user,amount) =>
 {
-    return {
-        "name": "Aliah",
-        "balance": 25000
-    }
+    user = updateUserBalance(user.name,amount)
+    return user
 }
 
 module.exports = { login, deposit }
