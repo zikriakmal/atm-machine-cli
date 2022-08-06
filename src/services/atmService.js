@@ -1,9 +1,9 @@
 const login = async (name) =>
 {
+    //todo check logged in or not
     const balance = 0;
-    const result = `Hello, ${name}!\nYour balance is ${balance}`
-
-    return result
+    console.log(`Hello, ${name}!\nYour balance is ${balance}`)
+    return true
 }
 
 module.exports = { login }
