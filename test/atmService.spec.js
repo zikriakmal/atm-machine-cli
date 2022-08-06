@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { login } = require('../app');
+const { login } = require('../src/services/atmService');
 
 
 describe('ATM Machine (DKatalis test purpose)', () =>
@@ -10,6 +10,6 @@ describe('ATM Machine (DKatalis test purpose)', () =>
 
         const result = login(name)
         const assertVal = `Hello, ${name}!\nYour balance is $0`
-        assert.equal(result, result)
+        assert.equal(result, assertVal)
     })
 })
