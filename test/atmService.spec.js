@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { login, deposit, transfer} = require('../src/services/atmService');
+const { login, deposit, transfer, logout, withdraw} = require('../src/services/atmService');
 const {findByName} = require("../src/services/userService");
 
 
@@ -62,7 +62,25 @@ describe('ATM Machine (DKatalis test purpose)', () =>
     })
 
 
+    it("Logout success", async () =>
+    {
+        const assertLogoutVal  = {
+            name: null,
+            balance: 0
+        }
+        const resultVal = await logout()
+        assert.strictEqual(assertLogoutVal.name,resultVal.name)
+    })
 
 
+    it("Withdraw Success", async () =>
+    {
+        const name = "Aliah"
+        const amount = 1000
+        const user = await findByName(name)
+        const resultVal = await withdraw(user,amount)
+        const assertVal = user.balance - amount
+        assert.strictEqual(resultVal.balance, assertVal)
+    })
 
 })
